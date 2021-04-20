@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDjBszYWUnI566-0dVPLJi8CFhiywKzT08",
-  authDomain: "fixurphoto-566c8.firebaseapp.com",
-  projectId: "fixurphoto-566c8",
-  storageBucket: "fixurphoto-566c8.appspot.com",
-  messagingSenderId: "461640181159",
-  appId: "1:461640181159:web:38437638a262c966fd4282"
+  apiKey: "AIzaSyAmBb4TMSlu-BPr67TTSdl8KF8rzMkcwcg",
+  authDomain: "fixurpixels.firebaseapp.com",
+  projectId: "fixurpixels",
+  storageBucket: "fixurpixels.appspot.com",
+  messagingSenderId: "1069348759031",
+  appId: "1:1069348759031:web:5e9781923b93e4f14c7af2"
 };
 
 export default firebaseConfig;
