@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -10,20 +10,16 @@ import Login from './components/Login/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Book from './components/Dashboard/Book/Book';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
-import BookingList from './components/Dashboard/BookingList/BookingList';
 import Review from './components/Dashboard/Review/Review';
-import Admin from './components/Admin/Admin/Admin';
-import OrderList from './components/Admin/OrderList/OrderList';
-import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
-import AddServices from './components/Admin/AddServices/AddServices';
-import ManageServices from './components/Admin/ManageServices/ManageServices';
+import AddServices from './components/Dashboard/AddServices/AddServices';
+import OrderList from './components/Dashboard/OrderList/OrderList';
+import MakeAdmin from './components/Dashboard/MakeAdmin/MakeAdmin';
+import ManageServices from './components/Dashboard/ManageServices/ManageServices';
+import BookingList from './components/Dashboard/BookingList/BookingList';
 
-export const UserContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -56,12 +52,8 @@ function App() {
           <PrivateRoute path="/manage-services">
             <ManageServices></ManageServices>
           </PrivateRoute>
-          <PrivateRoute path="/admin">
-            <Admin></Admin>
-          </PrivateRoute>
         </Switch>
       </Router>
-    </UserContext.Provider>
   );
 }
 

@@ -32,9 +32,6 @@ const Navbar = () => {
               <Link className="nav-link text-white ms-5" to="/dashboard">
                 Dashboard
               </Link>
-              <Link className="nav-link text-white ms-5" to="/admin">
-                Admin
-              </Link>
               <Link className="nav-link text-white ms-5" to="/login">
                 Login
               </Link>

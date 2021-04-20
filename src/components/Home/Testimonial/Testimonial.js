@@ -1,18 +1,18 @@
 import React from "react";
 
 const Testimonial = (props) => {
-  const { quote, img, name, from } = props.testimonial;
+  const { description, image, name, country } = props.testimonial;
   return (
-    <div className="container col-md-4 col-sm-12 p-4">
-      <div className="row  shadow p-4 rounded"> 
-          <p className="mb-4">{quote}</p>
+    <div className="col-md-4 col-sm-12">
+      <div className="shadow p-4 rounded"> 
+          <p className="mb-4">{description}</p>
         <div className="d-flex">
           <div className="col-md-3"> 
-            <img className="img-fluid" src={img} alt="" />
+            <img className="img-fluid" src={image} alt="" />
           </div>
           <div className="col-md-9 mt-3 px-4">
             <h6>{name}</h6>
-            <p>{from}</p>
+            <p>{country}</p>
           </div>
         </div>
       </div>

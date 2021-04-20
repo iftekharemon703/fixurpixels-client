@@ -2,6 +2,7 @@ import React from "react";
 import { useHistory } from "react-router";
 
 const ServiceDetail = ({ service }) => {
+
   const history = useHistory();
   const handleService = (service) => {
     history.push('/book');
@@ -14,7 +15,7 @@ const ServiceDetail = ({ service }) => {
         <img
           style={{height: '50px', width: 'auto'}}
           className="img-fluid"
-          src={service.img}
+          src={service.image}
         />
         <h5 className="my-3">{service.name}</h5>
         <h2 style={{ color: "#9E1F63" }}>${service.price}</h2>

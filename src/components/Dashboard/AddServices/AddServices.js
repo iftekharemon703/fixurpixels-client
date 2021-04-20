@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import Sidebar from '../Sidebar/Sidebar';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-const Review = () => {
+const AddServices = () => {
     const { register, handleSubmit } = useForm();
-    const [imageUrl, setImageUrl] = useState(null) 
+    const [imageUrl, setImageUrl] = useState(null)
 
     const handleImageUpload = (event) => {
         const imageData = new FormData();
@@ -26,18 +26,18 @@ const Review = () => {
             alert('Please Wait for image uploading')
         }
         else {
-            const newReview = { ...data, image: imageUrl }
-            fetch('http://localhost:5000/addTestimonial', {
+            const newService = { ...data, image: imageUrl }
+            fetch('http://localhost:5000/addService', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(newReview)
+                body: JSON.stringify(newService)
             })
                 .then(res => res.json())
                 .then(data => {
                     if (data) {
-                        alert('Thanks for your Testimonial')
+                        alert('Thanks for Added Service')
                         window.location.reload()
                     }
                 })
@@ -52,11 +52,11 @@ const Review = () => {
                 </div>
                 <div className="col-md-10">
                     <form onSubmit={handleSubmit(onSubmit)} className="col-md-6 p-5">
-                        <input className="form-control mb-3" type="text" placeholder="Enter Your Name" {...register("name", { required: true })} />
+                        <input className="form-control mb-3" type="text" placeholder="Enter Your Title" {...register("name", { required: true })} />
 
-                        <input className="form-control mb-3" type="text" placeholder="Enter Your Country Name" {...register("country", { required: true })} />
+                        <input className="form-control mb-3" type="text" placeholder="Price" {...register("price", { required: true })} />
 
-                        <textarea className="form-control mb-3" placeholder="Enter Your Comment" {...register("description", { required: true })} />
+                        <textarea className="form-control mb-3" placeholder="Enter Your Description" {...register("description", { required: true })} />
 
                         <input onChange={handleImageUpload} type="file" className="form-control mb-3"/>
 
@@ -68,4 +68,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default AddServices;
